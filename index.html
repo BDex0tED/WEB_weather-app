@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+       body{
+        font-family: 'Montserrat', sans-serif;
+       }
+    </style>
+</head>
+<body class="bg-black min-h-screen flex items-center justify-center p-4">
+
+    <div class="w-full max-w-md mx-auto bg-gray-900 text-gray-100 rounded-2xl shadow-2xl p-6">
+        
+        <h1 class="text-3xl font-bold text-center mb-2">Current Weather</h1>
+        <h2 class="text-2xl font-semibold text-center mb-4" >It's <span class="text-2xl font-meduim text-center" id="date"></span> </h2>
+
+        <div class="space-y-4 mb-6">
+            <div>
+                <label for="city-name" class="block text-sm font-medium mb-1 text-gray-300">City Name</label>
+                <div class="flex space-x-2">
+                    <input type="text" id="city-name" class="flex-grow px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 text-white" placeholder="e.g.. Bishkek, Barcelona ">
+                    <button id="get-weather-btn" class="px-5 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold shadow-lg transition-colors">
+                        Get
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="error-message" class="hidden bg-red-700 text-white text-center p-3 rounded-lg">
+            <p id="error-text"></p>
+        </div>
+
+        <div id="weather-display" class="hidden space-y-6">
+            <div class="text-center">
+                <h2 id="city-display" class="text-4xl font-bold"></h2>
+                <div class="flex justify-center items-center">
+                    <img id="weather-icon" src="" alt="Weather Icon" class="w-24 h-24 -my-2">
+                </div>
+                <p id="weather-description" class="text-xl capitalize text-gray-300"></p>
+            </div>
+
+            <div class="text-center">
+                <p id="temperature" class="text-7xl font-extrabold"></p>
+                <p id="temperature-fahrenheit" class="text-2xl text-gray-400"></p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 bg-gray-800 p-4 rounded-lg">
+                <div class="text-center">
+                    <p class="text-sm text-gray-400">Feels Like</p>
+                    <p id="feels-like" class="text-2xl font-semibold"></p>
+                </div>
+                <div class="text-center">
+                    <p class="text-sm text-gray-400">Humidity</p>
+                    <p id="humidity" class="text-2xl font-semibold"></p>
+                </div>
+                <div class="text-center">
+                    <p class="text-sm text-gray-400">Wind speed</p>
+                    <p id="wind-speed" class="text-2xl font-semibold"></p>
+                </div>
+                <div class="text-center">
+                    <p class="text-sm text-gray-400">Pressure</p>
+                    <p id="pressure" class="text-2xl font-semibold"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
